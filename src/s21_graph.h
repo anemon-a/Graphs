@@ -14,7 +14,7 @@ class Graph {
 
  private:
   void LoadDigraph(std::ifstream& in);
-  void LoadGraph(std::ifstream& in);
+  // void LoadGraph(std::ifstream& in);
   size_t rows_ = 0;
   size_t cols_ = 0;
   int type_graph_;
