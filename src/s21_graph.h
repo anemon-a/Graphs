@@ -9,16 +9,13 @@
 
 class Graph {
  public:
+  Graph() : count_vertexes_(0){};
   void LoadGraphFromFile(std::string filename);
   void ExportGraphToDot(std::string filename);
 
  private:
-  void LoadDigraph(std::ifstream& in);
-  // void LoadGraph(std::ifstream& in);
-  size_t rows_ = 0;
-  size_t cols_ = 0;
-  int type_graph_;
-  std::vector<std::vector<int>> matrix_;
+  int count_vertexes_;
+  std::vector<std::vector<int>> adjacency_matrix_;
 };
 
 #endif  // S21_GRAPH_H_
