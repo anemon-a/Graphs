@@ -9,7 +9,7 @@
 
 class Graph {
  public:
-  Graph() : count_vertexes_(0){};
+  Graph() : count_vertexes_(0) {};
   void LoadGraphFromFile(std::string filename);
   void ExportGraphToDot(std::string filename);
 

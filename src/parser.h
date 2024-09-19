@@ -8,15 +8,14 @@
 
 class Parser {
  public:
-  Parser(): count_vertexes_(0){};
+  Parser() : count_vertexes_(0) {};
   void ParseGraphFromFile(const std::string& filename);
-  void WriteGraphToDot(const std::string* filename);
+  // void WriteGraphToFile(const std::string* filename);
 
  private:
   std::string removeSpaces(const std::string& str);
-  void LoadDigraph(std::ifstream& in);
   void LoadGraph(std::ifstream& in);
-//   void addEdge()
+  //   void addEdge()
   int count_vertexes_;
   int type_graph_;
   std::vector<std::pair<int, int>> adjacency_list_;
