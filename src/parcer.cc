@@ -8,8 +8,12 @@ void Parser::LoadDigraph(std::ifstream& in) {
     int pos = 0;
     if ((pos = line.find("->")) != std::string::npos) {
       std::string from = line.substr(0, pos);
-      std::string to = line.substr(pos + 2);
-      adjacency_list_[from].push_back(to);
+      // std::string to = line.substr(pos + 2);
+      if (!vertexes.count(from)){ 
+        vertexes[vertex] = count_vertexes_++;
+      }
+      
+        // adjacency_list_[vertexes[from]].push_back(vertexes[to], weight);
         // std::cout << v1 << adjacency_list_[v1] << std::endl;
     }
   }

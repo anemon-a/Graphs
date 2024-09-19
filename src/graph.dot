@@ -1,7 +1,7 @@
 digraph G {
-    A -> B -> C -> L [label="3"];
+    A -> B [label="3"];
     A -> C [label="5"];
-    B -> C -> M [label="2"];
-    B -> F -> K [label="4"];
+    B -> C [label="2"];
+    B -> F [label="4"];
     C -> D [label="1"];
 }

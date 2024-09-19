@@ -19,7 +19,7 @@ class Parser {
 //   void addEdge()
   int count_vertexes_;
   int type_graph_;
-  std::map<std::string, std::vector<int>> adjacency_list_;
+  std::vector<std::pair<int, int>> adjacency_list_;
 };
 
 #endif  // PARSER_H_
