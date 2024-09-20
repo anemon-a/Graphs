@@ -1,5 +1,5 @@
 digraph G {
-    A -> B [label="3"];
+    A -> B -> G [label="3"];
     A -> C [label="5"];
     B -> C [label="2"];
     B -> F [label="4"];
