@@ -2,38 +2,24 @@
 
 void Parser::ParseGraphFromDot(std::ifstream& in, IGraph& graph) {
   std::string line;
-
   while (std::getline(in, line) && line != "}") {
-    // line = removeSpaces(line);
     int pos = 0;
-    std::stringstream s(line);
+    if (((pos = line.find("->")) != std::string ::npos) ||
+        ((pos = line.find("--")) != std::string ::npos)) {
+      std::string v_from, v_to, sep, label;
+      int weight = 1;
+      std::stringstream ss(line);
 
-    // for (size_t i = 0; i != line.size(); ++i) {
-    //   if (line[i] == '-' || line[i] == '[') {
-    //     std::string v = line.substr(pos, i - pos);
-    //     graph.AddVertex(v);
-    //     pos = i + 2;
+      ss >> v_from >> sep >> v_to >> label;
+      graph.AddVertex(v_from);
+      graph.AddVertex(v_to);
 
-    //   } else if ((pos = line.find("label=")) != std::string::npos) {
-    //     std::string v = line.substr(pos, i - pos);
-    //   }
-    // }
+      if ((pos = label.find("label=")) != std::string::npos) {
+        weight = std::stoi(label.substr(label.find('=') + 2));
+      }
+      graph.AddEdge(graph.GetVertex(v_from), graph.GetVertex(v_to), weight);
+    }
   }
 }
 
 void Parser::WriteGraphToDot(std::ofstream& out, const IGraph& graph) {}
-
-std::string Parser::removeSpaces(const std::string& str) {
-  std::string result;
-  for (char c : str) {
-    if (!std::isspace(c)) {
-      result += c;
-    }
-  }
-  return result;
-}
-
-// int pos_weight = line.find("label");
-// adjacency_list_[vertexes[from]].push_back(vertexes[to], weight);
-// std::cout << v1 << adjacency_list_[v1] << std::endl;
-// }

@@ -11,14 +11,9 @@
 
 class Parser {
  public:
-  Parser() : count_vertexes_(0) {};
+  Parser() = default;
   void ParseGraphFromDot(std::ifstream& in, IGraph& graph);
   void WriteGraphToDot(std::ofstream& out, const IGraph& graph);
-
- private:
-  std::string removeSpaces(const std::string& str);
-  int count_vertexes_;
-  int type_graph_;
 };
 
 #endif  // PARSER_H_
