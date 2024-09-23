@@ -14,7 +14,7 @@ class IGraph {
   virtual void AddVertex(std::string vertex) = 0;
   virtual int GetEdgeWeight(int vertex_from, int vertex_to) const = 0;
   virtual void AddEdge(int vertex_from, int vertex_to, int weight) = 0;
-  virtual void SetTypeGraph(GraphType type) = 0;
+  virtual void SetGraphType(GraphType type) = 0;
 };
 
 class Graph : IGraph {
@@ -28,7 +28,7 @@ class Graph : IGraph {
   void AddVertex(std::string vertex) override;
   int GetEdgeWeight(int vertex_from, int vertex_to) const override;
   void AddEdge(int vertex_from, int vertex_to, int weight) override;
-  // void SetTypeGraph(GraphType type);
+  void SetGraphType(GraphType type);
 
  private:
   GraphType graph_type_;

@@ -34,6 +34,13 @@ void Graph::AddVertex(std::string vertex) {
 
 void Graph::AddEdge(int vertex_from, int vertex_to, int weight) {
   adjacency_matrix_[vertex_from][vertex_to] = weight;
+  if (graph_type_ == GraphType::GRAPH) {
+    adjacency_matrix_[vertex_to][vertex_from] = weight;
+  }
+}
+
+void Graph::SetGraphType(GraphType type) {
+  graph_type_ = type;
 }
 
 void Graph::PrintGraph() const {

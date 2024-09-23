@@ -4,6 +4,11 @@ void Parser::ParseGraphFromDot(std::ifstream& in, IGraph& graph) {
   std::string line;
   while (std::getline(in, line) && line != "}") {
     int pos = 0;
+    if (line.find("digraph") != std::string ::npos) {
+      graph.SetGraphType(IGraph::GraphType::DIGRAPH);
+    } else if (line.find("graph") != std::string::npos ) {
+      graph.SetGraphType(IGraph::GraphType::GRAPH);
+    }
     if (((pos = line.find("->")) != std::string ::npos) ||
         ((pos = line.find("--")) != std::string ::npos)) {
       std::string v_from, v_to, sep, label;

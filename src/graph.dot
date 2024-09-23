@@ -1,7 +1,7 @@
-digraph {
-    A -> B [label="3"];
-    A -> C [label="5"];
-    B -> C [label="2"];
-    B -> F [label="4"];
-    C -> D [label="1"];
+graph {
+    A -- B [label="3"];
+    A -- C [label="5"];
+    B -- C [label="2"];
+    B -- F [label="4"];
+    C -- D [label="1"];
 }
