@@ -4,6 +4,8 @@
 #include "graph/s21_graph.h"
 #include "graph_algorithms/s21_graph_algorithms.h"
 
+namespace s21 {
+
 enum class ConsoleMessage {
   kMenu = 0,
 };
@@ -33,15 +35,17 @@ const std::map<ConsoleMessage, std::string> messages = {
 class Console {
  public:
   int Run();
+
+ private:
   MenuItem InputItem();
   Vertex InputVertex();
   void PrintVertex(const Vertex& vertex);
-
- private:
   bool IsDigit(const std::string& input);
 
   Graph graph_;
   GraphAlgorithms graph_algorithms_;
 };
+
+}  // namespace s21
 
 #endif  // CONSOLE_H_

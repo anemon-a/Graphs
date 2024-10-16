@@ -1,5 +1,7 @@
 #include "s21_graph.h"
 
+using s21::Graph;
+
 void Graph::LoadGraphFromFile(std::string filename) {
   std::ifstream in(filename);
   std::string line;

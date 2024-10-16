@@ -1,6 +1,6 @@
 #include "s21_graph_algorithms.h"
 
-#include <optional>
+using s21::GraphAlgorithms;
 
 std::vector<Vertex> GraphAlgorithms::DepthFirstSearch(
     const IGraph &graph, const Vertex &start_vertex) {

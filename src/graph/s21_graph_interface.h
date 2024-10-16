@@ -7,6 +7,7 @@
 
 using Vertex = std::variant<int, std::string>;
 
+namespace s21 {
 class IGraph {
  public:
   enum class GraphType { kGraph, kDigraph };
@@ -24,5 +25,6 @@ class IGraph {
       const Vertex& vertex) const = 0;
   virtual const std::vector<Vertex> GetAllVertices() const = 0;
 };
+}  // namespace s21
 
 #endif  // S21_GRAPH_INTERFACE_H_

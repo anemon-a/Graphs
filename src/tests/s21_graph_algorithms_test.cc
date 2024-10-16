@@ -4,6 +4,9 @@
 
 #include "../graph/s21_graph.h"
 
+using s21::Graph;
+using s21::GraphAlgorithms;
+
 TEST(BreadthFirstSearch, GraphTest1) {
   Graph g;
   GraphAlgorithms alg;

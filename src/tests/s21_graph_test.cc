@@ -2,7 +2,12 @@
 
 #include <gtest/gtest.h>
 
-TEST(Constructor, default_constructor) { Graph g; }
+using s21::Graph;
+
+TEST(Constructor, default_constructor) {
+  Graph g;
+  ASSERT_ANY_THROW(g.GetEdgeWeight(1, 2));
+}
 
 // Тесты AddEdge, Add vertices, GetEdgeWeight и др. с нулевым графом
 // Тесты на обработку исклбчений

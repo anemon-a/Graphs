@@ -8,6 +8,8 @@
 
 #include "s21_graph_interface.h"
 
+namespace s21 {
+
 class Graph : public IGraph {
  public:
   Graph() : graph_type_(GraphType::kGraph), vertex_count_(0) {};
@@ -38,5 +40,6 @@ class Graph : public IGraph {
   std::map<Vertex, int> vertex_index_;
   std::vector<std::vector<int>> adjacency_matrix_;
 };
+}  // namespace s21
 
 #endif  // S21_GRAPH_H_

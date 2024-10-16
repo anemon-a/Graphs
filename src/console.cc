@@ -1,5 +1,9 @@
 #include "console.h"
 
+using s21::Console;
+using s21::ConsoleMessage;
+using s21::MenuItem;
+
 int Console::Run() {
   while (true) {
     std::cout << messages.at(ConsoleMessage::kMenu);
