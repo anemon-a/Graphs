@@ -12,8 +12,7 @@ namespace s21 {
 
 class Graph : public IGraph {
  public:
-  friend class GraphTest;
-  Graph() : graph_type_(GraphType::kGraph), vertex_count_(0) {};
+    Graph() : graph_type_(GraphType::kGraph), vertex_count_(0) {};
 
   void LoadGraphFromFile(std::string filename);
   // void ExportGraphToDot(std::string filename);
@@ -33,7 +32,6 @@ class Graph : public IGraph {
       const;  // Для тестов
 
  private:
-  void SetGraphType(GraphType type);
   void AddVertex(const Vertex& vertex);
   int GetIndex(const Vertex& vertex) const;
 

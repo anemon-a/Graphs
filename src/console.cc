@@ -112,7 +112,7 @@ void s21::Console::RunMinTree() {
   std::cout << "The minimum spanning tree:\n";
   for (const auto& row : result) {
     for (const auto& v : row) {
-      std::cout << v.value() << " ";
+      std::cout << v << " ";
     }
     std::cout << std::endl;
   }
@@ -140,7 +140,7 @@ s21::MenuItem s21::Console::InputItem() {
   return static_cast<MenuItem>(stoi(choice));
 }
 
-Vertex s21::Console::InputVertex() {
+s21::Vertex s21::Console::InputVertex() {
   Vertex vertex;
   std::string input;
   std::cout << "Enter the vertex: ";

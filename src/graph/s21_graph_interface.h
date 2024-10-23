@@ -6,9 +6,9 @@
 #include <variant>
 #include <vector>
 
-using Vertex = std::variant<int, std::string>;
-
 namespace s21 {
+
+using Vertex = std::variant<int, std::string>;
 
 class IGraph {
  public:

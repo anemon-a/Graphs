@@ -1,6 +1,8 @@
 #include "s21_graph_algorithms.h"
 
-std::vector<Vertex> s21::GraphAlgorithms::DepthFirstSearch(
+using namespace s21;
+
+std::vector<Vertex> GraphAlgorithms::DepthFirstSearch(
     const IGraph &graph, const Vertex &start_vertex) {
   if (!graph.GetVertexCount()) {
     throw std::runtime_error("Graph is empty");
@@ -27,7 +29,7 @@ std::vector<Vertex> s21::GraphAlgorithms::DepthFirstSearch(
   return result;
 }
 
-std::vector<Vertex> s21::GraphAlgorithms::BreadthFirstSearch(
+std::vector<Vertex> GraphAlgorithms::BreadthFirstSearch(
     const IGraph &graph, const Vertex &start_vertex) {
   if (!graph.GetVertexCount()) {
     throw std::runtime_error("Graph is empty");
@@ -52,8 +54,9 @@ std::vector<Vertex> s21::GraphAlgorithms::BreadthFirstSearch(
   return result;
 }
 
-int s21::GraphAlgorithms::GetShortestPathBetweenVertices(
-    const IGraph &graph, const Vertex &vertex1, const Vertex &vertex2) {
+int GraphAlgorithms::GetShortestPathBetweenVertices(const IGraph &graph,
+                                                    const Vertex &vertex1,
+                                                    const Vertex &vertex2) {
   std::unordered_map<Vertex, int> shortest_path;
   std::unordered_set<Vertex> unvisited;
   if (!graph.GetVertexCount()) {
@@ -91,7 +94,7 @@ int s21::GraphAlgorithms::GetShortestPathBetweenVertices(
 }
 
 std::vector<std::vector<std::optional<int>>>
-s21::GraphAlgorithms::GetShortestPathsBetweenAllVertices(const IGraph &graph) {
+GraphAlgorithms::GetShortestPathsBetweenAllVertices(const IGraph &graph) {
   if (!graph.GetVertexCount()) {
     throw std::runtime_error("Graph is empty");
   }
@@ -131,7 +134,7 @@ s21::GraphAlgorithms::GetShortestPathsBetweenAllVertices(const IGraph &graph) {
   return shortest_paths;
 }
 
-std::vector<std::vector<int>> s21::GraphAlgorithms::GetLeastSpanningTree(
+std::vector<std::vector<int>> GraphAlgorithms::GetLeastSpanningTree(
     const IGraph &graph) {
   if (!graph.GetVertexCount()) {
     throw std::runtime_error("Graph is empty");
